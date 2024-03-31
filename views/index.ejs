@@ -1,0 +1,28 @@
+<!-- Define a function to render each location -->
+<% function renderLocation(location) { %>
+    <li>
+      <strong> name:</strong> <%= location.name %><br />
+      <strong> address:</strong> <%= location.address %><br />
+      <strong> latitude:</strong> <%= location.latitude  %><br />
+      <strong> longitude :</strong> <%= location.longitude %>
+    </li>
+    <% } %>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Locations</title>
+      </head>
+      <body>
+        <h1>Locations List</h1>
+        <ul>
+          <% if (locations.length > 0) { %>
+          <!-- Call the renderLocation function for each location -->
+          <% locations.forEach(renderLocation); %> <% } else { %>
+          <li>No locations found.</li>
+          <% } %>
+        </ul>
+      </body>
+    </html>
